@@ -9,7 +9,7 @@
   /* Appliquer la police */
   body {
     font-family: 'Oracle', sans-serif;
-    margin: 0;
+    margin: 1rem 2rem;
     padding: 0;
     background-color: black; /* Fond noir */
     color: white; /* Texte blanc */

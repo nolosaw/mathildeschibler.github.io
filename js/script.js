@@ -13,13 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
   
         // Filtrer les projets
         const selectedTag = tag.getAttribute('data-tag');
-        projects.forEach(project => {
-          if (selectedTag === 'all' || project.getAttribute('data-tags').includes(selectedTag)) {
+        if (isSelected) {
+          // Si le tag est désélectionné, afficher tous les projets
+          projects.forEach(project => {
             project.style.display = 'block';
-          } else {
-            project.style.display = 'none';
-          }
-        });
+          });
+        } else {
+          // Sinon, filtrer les projets en fonction du tag sélectionné
+          projects.forEach(project => {
+            if (selectedTag === 'all' || project.getAttribute('data-tags').includes(selectedTag)) {
+              project.style.display = 'block';
+            } else {
+              project.style.display = 'none';
+            }
+          });
+        }
       });
+    });
+  
+    // Afficher tous les projets par défaut
+    projects.forEach(project => {
+      project.style.display = 'block';
     });
   });
