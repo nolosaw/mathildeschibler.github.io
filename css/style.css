@@ -11,21 +11,37 @@
     font-family: 'Oracle', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
   }
   
+  /* Header : Titre à gauche et menu à droite */
   header {
-    background-color: #333;
-    color: black;
-    padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Titre à gauche, menu à droite */
+    align-items: center;
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    padding: 1rem 2rem;
+    border-bottom: 1px solid white; /* Ligne de séparation */
+  }
+  
+  header .title {
+    font-size: 24px;
+    font-weight: bold;
   }
   
   header a {
-    color: black;
+    color: white; /* Liens blancs */
     margin: 0 1rem;
-    text-decoration: none;
+    text-decoration: underline; /* Soulignement des liens */
   }
   
+  header a:hover {
+    text-decoration: none; /* Supprime le soulignement au survol */
+  }
+  
+  /* Grille des projets */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -48,13 +64,31 @@
     filter: grayscale(0%);
   }
   
+  /* Filtres : Bulles de tags */
   .filters {
     text-align: center;
     margin-bottom: 1rem;
   }
   
-  .filters button {
+  .filters .tag {
+    display: inline-block;
     margin: 0 0.5rem;
     padding: 0.5rem 1rem;
-    cursor: pointer;
+    border: 1px solid white; /* Contour blanc */
+    border-radius: 20px; /* Coins arrondis */
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    cursor: pointer; /* Curseur interactif */
+    user-select: none; /* Empêche la sélection de texte */
+    transition: all 0.3s ease; /* Animation fluide */
+  }
+  
+  .filters .tag:hover {
+    background-color: white; /* Fond blanc au survol */
+    color: black; /* Texte noir au survol */
+  }
+  
+  .filters .tag.selected {
+    background-color: white; /* Fond blanc si sélectionné */
+    color: black; /* Texte noir si sélectionné */
   }
