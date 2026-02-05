@@ -2,21 +2,40 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mathilde Schibler — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Mathilde Schibler</h1>
     <nav>
       <a href="index.html">Accueil</a>
-      <a href="projects.html">Projets</a>
-      <a href="contact.html">Contact</a>
+      <a href="about.html">À propos</a>
     </nav>
   </header>
   <main>
-    <h2>Bienvenue !</h2>
-    <p>Mon site est parti se refaire une beauté. Revenez bientôt !</p>
+    <h1>Mes Projets</h1>
+    <div class="filters">
+      <button data-tag="all">Tous</button>
+      <button data-tag="web">Web</button>
+      <button data-tag="design">Design</button>
+    </div>
+    <div class="projects-grid">
+      <div class="project" data-tags="web">
+        <a href="project.html">
+          <img src="images/project1.jpg" alt="Projet 1">
+          <h2>Projet 1</h2>
+        </a>
+      </div>
+      <div class="project" data-tags="design">
+        <a href="project.html">
+          <img src="images/project2.jpg" alt="Projet 2">
+          <h2>Projet 2</h2>
+        </a>
+      </div>
+      <!-- Ajouter d'autres projets ici -->
+    </div>
   </main>
+  <script src="js/script.js"></script>
 </body>
 </html>
