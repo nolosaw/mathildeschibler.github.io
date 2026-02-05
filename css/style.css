@@ -1,3 +1,4 @@
+/* Définir la police Oracle */
 @font-face {
     font-family: 'Oracle';
     src: url('../assets/fonts/ABCOraclePlusVariable-Regular.woff2') format('woff2');
@@ -6,20 +7,49 @@
     font-style: normal;
   }
   
-  /* Appliquer la police */
-  body {
-    font-family: 'Oracle', sans-serif;
-    margin: 1rem 2rem;
+  /* Styles globaux */
+  html, body {
+    margin: 0;
     padding: 0;
+    font-family: 'Oracle', sans-serif; /* Police par défaut */
     background-color: black; /* Fond noir */
     color: white; /* Texte blanc */
+    line-height: 1.6; /* Améliorer la lisibilité */
+  }
+  
+  /* Appliquer la police */
+  body {
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+  }
+  
+  /* En-têtes */
+  h1, h2, h3, h4, h5, h6 {
+    color: white; /* Couleur blanche pour tous les titres */
+    margin: 1rem 0;
+  }
+  
+  /* Paragraphes */
+  p {
+    margin: 1rem 0;
+    color: #ddd; /* Texte légèrement plus clair que blanc */
+  }
+  
+  /* Liens */
+  a {
+    color: white; /* Liens blancs */
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    text-decoration: none; /* Supprime le soulignement au survol */
   }
   
   /* Header : Titre à gauche et menu à droite */
   header {
     display: flex;
-    justify-content: space-between; /* Titre à gauche, menu à droite */
-    align-items: center;
+    justify-content: left; /* Titre à gauche, menu à droite */
+    align-items: left;
     background-color: black; /* Fond noir */
     color: white; /* Texte blanc */
     padding: 1rem 2rem;
@@ -66,16 +96,18 @@
   
   /* Filtres : Bulles de tags */
   .filters {
-    text-align: center;
+    font-family: 'Oracle', sans-serif;
+    text-align: right;
     margin-bottom: 1rem;
   }
   
   .filters .tag {
+    font-family: 'Oracle', sans-serif;
     display: inline-block;
-    margin: 0 0.5rem;
+    margin: 1rem 0.5rem;
     padding: 0.5rem 1rem;
     border: 1px solid white; /* Contour blanc */
-    border-radius: 20px; /* Coins arrondis */
+    border-radius: 10px; /* Coins arrondis */
     background-color: black; /* Fond noir */
     color: white; /* Texte blanc */
     cursor: pointer; /* Curseur interactif */
@@ -91,4 +123,11 @@
   .filters .tag.selected {
     background-color: white; /* Fond blanc si sélectionné */
     color: black; /* Texte noir si sélectionné */
+  }
+  
+  /* Styles spécifiques à la page d'exemple de projet */
+  .project {
+    padding: 2rem;
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
   }

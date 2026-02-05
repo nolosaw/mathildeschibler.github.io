@@ -1,33 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tags = document.querySelectorAll('.filters .tag');
     const projects = document.querySelectorAll('.project');
+    const resetButton = document.getElementById('reset-filters');
+
+    
   
     tags.forEach(tag => {
       tag.addEventListener('click', () => {
-        // Gérer la sélection/dé-sélection des tags
-        const isSelected = tag.classList.contains('selected');
-        tags.forEach(t => t.classList.remove('selected')); // Réinitialiser tous les tags
-        if (!isSelected) {
-          tag.classList.add('selected'); // Ajouter la classe "selected" au tag cliqué
-        }
+        // Ajouter ou retirer la classe "selected" pour le tag cliqué
+        tag.classList.toggle('selected');
+  
+        // Récupérer tous les tags sélectionnés
+        const selectedTags = Array.from(tags)
+          .filter(t => t.classList.contains('selected'))
+          .map(t => t.getAttribute('data-tag'));
   
         // Filtrer les projets
-        const selectedTag = tag.getAttribute('data-tag');
-        if (isSelected) {
-          // Si le tag est désélectionné, afficher tous les projets
-          projects.forEach(project => {
+        projects.forEach(project => {
+          const projectTags = project.getAttribute('data-tags').split(' ');
+          // Afficher le projet s'il correspond à au moins un tag sélectionné
+          if (selectedTags.length === 0 || selectedTags.some(tag => projectTags.includes(tag))) {
             project.style.display = 'block';
-          });
-        } else {
-          // Sinon, filtrer les projets en fonction du tag sélectionné
-          projects.forEach(project => {
-            if (selectedTag === 'all' || project.getAttribute('data-tags').includes(selectedTag)) {
-              project.style.display = 'block';
-            } else {
-              project.style.display = 'none';
-            }
-          });
-        }
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  
+    // Gestion du bouton "Reset Filters"
+    resetButton.addEventListener('click', () => {
+      // Désélectionner tous les tags
+      tags.forEach(tag => tag.classList.remove('selected'));
+  
+      // Afficher tous les projets
+      projects.forEach(project => {
+        project.style.display = 'block';
       });
     });
   
