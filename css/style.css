@@ -389,7 +389,6 @@ header nav { order: 2; }
   left: 1.5rem;
   width: 2.5rem;
   height: 2.5rem;
-    font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -426,7 +425,13 @@ header nav { order: 2; }
   text-transform: uppercase;
   padding-right: 2.5rem;
 }
+.project-footer-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
 
+.mobile-cover {
+  display: none;
+}
 
 /* ==========================================================
    RESPONSIVE — PAGE PROJET
@@ -439,6 +444,13 @@ header nav { order: 2; }
   .project-sidebar {
     width: 100%;
     max-width: none;
+  }
+
+  .mobile-cover {
+    display: block;
+  }
+  .project-media .media-block:first-child {
+    display: none;
   }
 }
 
@@ -453,10 +465,21 @@ header nav { order: 2; }
     left: 1rem;
   }
 
-  @media (max-width: 600px) {
-  .marquee-track span {
-    font-size: 3rem;
-    padding-right: 0;
+  .project-title-marquee .marquee-track span {
+    font-size: 2rem;
+    padding-right: 1rem;
   }
+
+  .project-footer-marquee .marquee-track span {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+.scroll-top {
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-color: #ffffff;
+  font-size: 2rem;
+
+
 }
 }
