@@ -449,7 +449,6 @@ header nav { order: 2; }
   .mobile-cover {
     display: block;
   }
-  
 }
 
 @media (max-width: 600px) {
