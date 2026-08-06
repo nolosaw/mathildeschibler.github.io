@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 1. TITRE (onglet du navigateur) -->
+  <title>NOM DU PROJET — mathilde schibler</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <a href="../index.html">mathilde schibler</a>
+      <span class="tagline">design <em>en</em> interaction</span>
+    </div>
+    <nav>
+      <a href="../projects.html">projets</a>
+      <a href="../about.html">à propos</a>
+      <a href="mailto:hello@mathildeschibler.xyz">hello@mathildeschibler.xyz</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+
+    <!-- ============================================================
+         2. EN-TÊTE : titre + baseline à gauche, carte d'identité à droite
+         La carte d'identité est une simple liste label / valeur : ajoute
+         ou retire des <div class="identity-row"> selon ce dont ce projet
+         a besoin (tous les projets n'ont pas les mêmes champs).
+         ============================================================ -->
+    <section class="project-top">
+      <div class="project-title-block">
+        <h1>NOM DU PROJET</h1>
+        <p class="project-baseline">BASELINE</p>
+      </div>
+
+      <dl class="project-identity">
+        <div class="identity-row">
+          <dt>Year</dt>
+          <dd>2026</dd>
+        </div>
+        <div class="identity-row">
+          <dt>Status</dt>
+          <dd>ex. mandat professionnel, projet personnel, travail de diplôme...</dd>
+        </div>
+        <div class="identity-row">
+          <dt>Format</dt>
+          <dd>ex. identité visuelle / affiche / site web...</dd>
+        </div>
+        <div class="identity-row">
+          <dt>Tags</dt>
+          <dd>mot-clé · mot-clé · mot-clé</dd>
+        </div>
+        <div class="identity-row">
+          <dt>Themes</dt>
+          <dd>thème · thème · thème</dd>
+        </div>
+        <!-- Autres champs possibles : Collaborators, Supervisor, Exhibitions, Client... -->
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         3. DESCRIPTION : texte continu, longueur libre.
+         S'affiche automatiquement sur 3 colonnes sur desktop (CSS
+         column-count), 1 colonne sur mobile — pas de découpage manuel
+         à faire, un seul <p> suffit quelle que soit la longueur.
+         ============================================================ -->
+    <section class="project-description">
+      <p>
+        TEXTE DE DESCRIPTION DU PROJET. Un seul paragraphe continu ;
+        il se répartit automatiquement sur plusieurs colonnes selon sa longueur.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         4. MÉDIAS : une image ou vidéo par bloc, légende optionnelle.
+         Duplique un bloc <figure class="media-block"> pour chaque
+         média supplémentaire ; ils s'empilent verticalement au défilement.
+         ============================================================ -->
+
+    <!-- --- Bloc image (avec légende) --- -->
+    <figure class="media-block">
+      <img src="../assets/projects/NOM-DU-PROJET/01.jpg"
+           alt="DESCRIPTION DE L'IMAGE POUR L'ACCESSIBILITÉ"
+           loading="lazy">
+      <figcaption>Légende optionnelle — supprime cette balise si pas besoin</figcaption>
+    </figure>
+
+    <!-- --- Bloc image (sans légende) --- -->
+    <figure class="media-block">
+      <img src="../assets/projects/NOM-DU-PROJET/02.jpg"
+           alt="DESCRIPTION"
+           loading="lazy">
+    </figure>
+
+    <!-- --- Bloc vidéo ---
+         Chargement différé géré par js/lazy-video.js (data-src, pas src) :
+         la vidéo ne se charge que quand elle entre dans l'écran.
+         Lecture automatique en muet dès qu'elle est visible.
+         - poster obligatoire (image affichée avant lecture)
+         - exporte en .mp4 (H.264) compressé, idéalement < 5-8 Mo pièce
+    -->
+    <figure class="media-block">
+      <video class="lazy-video"
+             poster="../assets/projects/NOM-DU-PROJET/video-01-poster.jpg"
+             data-src="../assets/projects/NOM-DU-PROJET/video-01.mp4"
+             muted loop playsinline autoplay preload="none">
+      </video>
+      <figcaption>Légende optionnelle</figcaption>
+    </figure>
+
+  </main>
+
+  <script src="https://unpkg.com/lenis/dist/lenis.min.js"></script>
+  <script src="../js/lenis-init.js"></script>
+  <script src="../js/custom-cursor.js"></script>
+  <script src="../js/lazy-video.js"></script>
+</body>
+</html>

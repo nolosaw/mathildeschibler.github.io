@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — mathilde schibler, design en interaction</title>
+  <meta name="description" content="Identité visuelle, signalétique, médiation, design social, recherche-création : l'ensemble des projets de Mathilde Schibler, designer graphiste basée à Genève.">
+  <link rel="canonical" href="https://mathildeschibler.xyz/projects.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projets — mathilde schibler">
+  <meta property="og:description" content="Identité visuelle, signalétique, médiation, design social, recherche-création : l'ensemble des projets de Mathilde Schibler, designer graphiste basée à Genève.">
+  <meta property="og:url" content="https://mathildeschibler.xyz/projects.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="mathilde schibler">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projets — mathilde schibler">
+  <meta name="twitter:description" content="Identité visuelle, signalétique, médiation, design social, recherche-création : l'ensemble des projets de Mathilde Schibler, designer graphiste basée à Genève.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <a href="index.html">mathilde schibler</a>
+      <span class="tagline">design <em>en</em> interaction</span>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav">
+      <a href="projects.html" aria-current="page">projets</a>
+      <a href="about.html">à propos</a>
+      <a href="mailto:hello@mathildeschibler.xyz">hello@mathildeschibler.xyz</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="filters-bar">
+      <button class="filter-toggle" id="filter-toggle" aria-expanded="false">Filtrer</button>
+      <!-- Généré automatiquement depuis data/classification.json : les 13 catégories -->
+      <div class="filters" id="filters"></div>
+      <div class="filters-actions" id="filters-actions">
+        <button id="shuffle-btn">Shuffle</button>
+        <button id="reset-btn" hidden>Réinitialiser tous les filtres</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projects-grid">
+      <!-- Généré automatiquement depuis data/projects.json -->
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/lenis/dist/lenis.min.js"></script>
+  <script src="js/lenis-init.js"></script>
+  <script src="js/custom-cursor.js"></script>
+  <script src="js/nav-toggle.js"></script>
+  <script src="js/projects-grid.js"></script>
+</body>
+</html>

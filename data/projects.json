@@ -1,0 +1,161 @@
+[
+  {
+    "slug": "un-carton-de-plus",
+    "title": "Un carton de plus",
+    "cover": "assets/covers/un-carton-de-plus.webp",
+    "classification": [
+      "mediation-co-design",
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "lyoxa",
+    "title": "Lyoxa",
+    "cover": "assets/covers/lyoxa.webp",
+    "classification": [
+      "identite-positionnement",
+      "motion-design",
+      "mediation-co-design"
+    ]
+  },
+  {
+    "slug": "degrade",
+    "title": "DeGrade",
+    "cover": "assets/covers/degrade.webp",
+    "classification": [
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "delusional-souvenirs",
+    "title": "Delusional Souvenirs",
+    "cover": "assets/covers/delusional-souvenirs.webp",
+    "classification": [
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "alilenti",
+    "title": "Alilenti",
+    "cover": "assets/covers/alilenti.webp",
+    "classification": [
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "trickledown-effect",
+    "title": "Trickle-down Effect",
+    "cover": "assets/covers/trickledown-effect.webp",
+    "classification": [
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "topos",
+    "title": "Topos",
+    "cover": "assets/covers/topos.webp",
+    "classification": [
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "focus",
+    "title": "Focus",
+    "cover": "assets/covers/focus.webp",
+    "classification": [
+      "identite-positionnement",
+      "motion-design",
+      "installation-interactive"
+    ]
+  },
+  {
+    "slug": "vous-etes-ici",
+    "title": "Vous êtes ici",
+    "cover": "assets/covers/vous-etes-ici.webp",
+    "classification": [
+      "mediation-co-design",
+      "installation-interactive",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "act",
+    "title": "Act!",
+    "cover": "assets/covers/act.webp",
+    "classification": [
+      "identite-positionnement",
+      "signaletique",
+      "mediation-co-design"
+    ]
+  },
+  {
+    "slug": "case-27",
+    "title": "Case 27",
+    "cover": "assets/covers/case-27.webp",
+    "classification": [
+      "identite-positionnement",
+      "signaletique"
+    ]
+  },
+  {
+    "slug": "freeride-club-verbier",
+    "title": "Freeride Club Verbier",
+    "cover": "assets/covers/freeride-club-verbier.webp",
+    "classification": [
+      "identite-positionnement"
+    ]
+  },
+  {
+    "slug": "geneva-pride",
+    "title": "Geneva Pride",
+    "cover": "assets/covers/geneva-pride.webp",
+    "classification": [
+      "identite-positionnement",
+      "motion-design",
+      "signaletique"
+    ]
+  },
+  {
+    "slug": "gerance-centrale",
+    "title": "Gérance Centrale",
+    "cover": "assets/covers/gerance-centrale.webp",
+    "classification": [
+      "identite-positionnement"
+    ]
+  },
+  {
+    "slug": "orchestre-college",
+    "title": "Orchestre du Collège de Genève",
+    "cover": "assets/covers/orchestre-college.webp",
+    "classification": [
+      "identite-positionnement",
+      "motion-design"
+    ]
+  },
+  {
+    "slug": "quai-vernets",
+    "title": "Quai Vernets",
+    "cover": "assets/covers/quai-vernets.webp",
+    "classification": [
+      "identite-positionnement",
+      "signaletique",
+      "conception-objet-jeux"
+    ]
+  },
+  {
+    "slug": "vogue-puplinge",
+    "title": "Vogue Puplinge",
+    "cover": "assets/covers/vogue-puplinge.webp",
+    "classification": [
+      "identite-positionnement",
+      "motion-design",
+      "signaletique"
+    ]
+  }
+]

@@ -1,133 +1,460 @@
-/* Définir la police Oracle */
+/* ==========================================================
+   POLICE
+   ========================================================== */
 @font-face {
-    font-family: 'Oracle';
-    src: url('../assets/fonts/ABCOraclePlusVariable-Regular.woff2') format('woff2');
-    font-weight: 100 900; /* Définit la plage de poids */
-    font-stretch: 75% 125%; /* Définit la plage d'étirement (facultatif) */
-    font-style: normal;
-  }
-  
-  /* Styles globaux */
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Oracle', sans-serif; /* Police par défaut */
-    background-color: black; /* Fond noir */
-    color: white; /* Texte blanc */
-    line-height: 1.6; /* Améliorer la lisibilité */
-  }
-  
-  /* Appliquer la police */
-  body {
-    margin: 1rem 2rem;
-    padding: 1rem 2rem;
-  }
-  
-  /* En-têtes */
-  h1, h2, h3, h4, h5, h6 {
-    color: white; /* Couleur blanche pour tous les titres */
-    margin: 1rem 0;
-  }
-  
-  /* Paragraphes */
-  p {
-    margin: 1rem 0;
-    color: #ddd; /* Texte légèrement plus clair que blanc */
-  }
-  
-  /* Liens */
-  a {
-    color: white; /* Liens blancs */
-    text-decoration: underline;
-  }
-  
-  a:hover {
-    text-decoration: none; /* Supprime le soulignement au survol */
-  }
-  
-  /* Header : Titre à gauche et menu à droite */
-  header {
-    display: flex;
-    justify-content: left; /* Titre à gauche, menu à droite */
-    align-items: left;
-    background-color: black; /* Fond noir */
-    color: white; /* Texte blanc */
-    padding: 1rem 2rem;
-    border-bottom: 1px solid white; /* Ligne de séparation */
-  }
-  
-  header .title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  header a {
-    color: white; /* Liens blancs */
-    margin: 0 1rem;
-    text-decoration: underline; /* Soulignement des liens */
-  }
-  
-  header a:hover {
-    text-decoration: none; /* Supprime le soulignement au survol */
-  }
-  
-  /* Grille des projets */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
-  }
-  
-  .project {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .project img {
-    width: 100%;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-  }
-  
-  .project img:hover {
-    filter: grayscale(0%);
-  }
-  
-  /* Filtres : Bulles de tags */
+  font-family: 'Oracle';
+  src: url('../assets/fonts/ABCOraclePlusVariable-Regular.woff2') format('woff2');
+  font-weight: 100 350;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+/* ==========================================================
+   RESET / BASE
+   ========================================================== */
+   
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: 'Oracle', sans-serif;
+  line-height: 1.5;
+}
+
+img, video { max-width: 100%; display: block; }
+
+a {
+  color: #111111;
+  text-decoration: none;
+}
+a:hover { opacity: 0.6; }
+
+h1, h2, h3 { margin: 0 0 0.5rem 0; font-weight: 500; }
+
+button {
+  font-family: 'Oracle', sans-serif;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #111111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  html { scroll-behavior: auto !important; }
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  isolation: isolate;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 1rem 1rem;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  mask-image: linear-gradient(to bottom, rgb(255, 123, 0) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(255, 123, 0) 0%, transparent 100%);
+}
+
+
+header .brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+header .brand .tagline {
+  color: #ff6a00;
+  font-weight: 400;
+}
+header .brand .tagline em { font-style: italic; }
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================
+   CARROUSEL (accueil)
+   ========================================================== */
+.carousel {
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 20%;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-slide {
+  flex: 0 0 60%;
+  scroll-snap-align: center;
+}
+
+.carousel-image {
+  aspect-ratio: 16 / 10;
+  background-color: #000000;
+  overflow: hidden;
+}
+.carousel-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-caption {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide { flex-basis: 80%; }
+  .carousel-track { padding: 0 10%; }
+}
+
+/* ==========================================================
+   FILTRES (page projets)
+   ========================================================== */
+.filters-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 1rem 0 1rem;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.filters-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+}
+.filters-actions button {
+  cursor: pointer;
+}
+
+.filter-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .filter-toggle { display: inline-block; }
+  .filters-bar { flex-direction: column; align-items: flex-start; }
   .filters {
-    font-family: 'Oracle', sans-serif;
-    text-align: right;
-    margin-bottom: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #111111;
+    width: 100%;
   }
-  
-  .filters .tag {
-    font-family: 'Oracle', sans-serif;
-    display: inline-block;
-    margin: 1rem 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid white; /* Contour blanc */
-    border-radius: 10px; /* Coins arrondis */
-    background-color: black; /* Fond noir */
-    color: white; /* Texte blanc */
-    cursor: pointer; /* Curseur interactif */
-    user-select: none; /* Empêche la sélection de texte */
-    transition: all 0.3s ease; /* Animation fluide */
+  .filters.open { display: flex; }
+}
+
+.chip {
+  cursor: pointer;
+}
+.chip.active {
+  text-decoration: underline;
+}
+.chip-x {
+  margin-left: 0.3rem;
+  text-decoration: none;
+}
+
+/* ==========================================================
+   GRILLE DE PROJETS (page projets)
+   ========================================================== */
+.projects-grid {
+  columns: 3;
+  column-gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+.project-card {
+  display: block;
+  break-inside: avoid;
+  margin-bottom: 2rem;
+}
+.project-card:hover {
+  opacity: 1;
+}
+.project-card-image {
+  overflow: hidden;
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+.project-card:hover img {
+  transform: scale(1.05);
+}
+.project-card-caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+@media (max-width: 1024px) {
+  .projects-grid { columns: 2; }
+}
+@media (max-width: 560px) {
+  .projects-grid { columns: 1; padding: 1.5rem; }
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 1.75rem;
+  height: 1.5rem;
+  cursor: pointer;
+  order: 1;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #111111;
+}
+header nav { order: 2; }
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  header nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+    order: 3;
   }
-  
-  .filters .tag:hover {
-    background-color: white; /* Fond blanc au survol */
-    color: black; /* Texte noir au survol */
+  header nav.open { display: flex; }
+}
+
+/* ==========================================================
+   PAGE PROJET
+   ========================================================== */
+.project-page {
+  padding: 0 1rem;
+}
+
+.project-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* --- Colonne de gauche, flux normal --- */
+.project-sidebar {
+  width: 28%;
+  min-width: 320px;
+  max-width: 320px;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  padding: 1rem 0;
+}
+
+/* --- Titre en bannière défilante --- */
+.project-title-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 8rem;
+  font-weight: 900;
+  text-transform:uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  padding-right: 3rem;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
   }
-  
-  .filters .tag.selected {
-    background-color: white; /* Fond blanc si sélectionné */
-    color: black; /* Texte noir si sélectionné */
+
+}
+
+.project-title-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.project-baseline {
+  color: #000000;
+  margin: 0 0 1rem 0;
+}
+
+/* --- Bloc infos : lignes simples, pas de bordures --- */
+.project-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.identity-line {
+  display: flex;
+  flex-direction: column;
+}
+
+.identity-line dt {
+  color: #000000;
+}
+
+.identity-line dd {
+  margin: 0;
+}
+
+.project-description p {
+  margin: 0 0 1rem 0;
+}
+
+/* --- Colonne de droite, médias empilés --- */
+.project-media {
+  flex: 1 1 0%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.media-block {
+  margin: 0;
+}
+
+.media-block img,
+.media-block video {
+  width: 100%;
+  height: auto;
+}
+
+
+.media-block iframe {
+  width: 100%;
+  aspect-ratio: 1920 / 1200;
+  border: 0;
+}
+
+.media-block figcaption {
+  font-size: 1rem;
+  color: #000000;
+  margin-top: 0.5rem;
+}
+
+/* --- Bouton retour en haut --- */
+.scroll-top {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  background-color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top[hidden] {
+  display: flex;
+}
+
+/* ==========================================================
+   RESPONSIVE — PAGE PROJET
+   ========================================================== */
+@media (max-width: 900px) {
+  .project-layout {
+    flex-direction: column;
   }
-  
-  /* Styles spécifiques à la page d'exemple de projet */
-  .project {
-    padding: 2rem;
-    background-color: black; /* Fond noir */
-    color: white; /* Texte blanc */
+
+  .project-sidebar {
+    width: 100%;
+    max-width: none;
   }
+}
+
+@media (max-width: 600px) {
+  .project-sidebar,
+  .project-media {
+    padding: 1.5rem;
+  }
+
+  .scroll-top {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  @media (max-width: 600px) {
+  .marquee-track span {
+    font-size: 3rem;
+    padding-right: 0;
+  }
+}
+}
