@@ -449,9 +449,7 @@ header nav { order: 2; }
   .mobile-cover {
     display: block;
   }
-  .project-media .media-block:first-child {
-    display: none;
-  }
+  
 }
 
 @media (max-width: 600px) {
