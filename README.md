@@ -1,6 +1,7 @@
 # Structure du site
 
-```
+``
+`
 .
 ├── index.html                  → accueil : carrousel des projets "featured"
 ├── projects.html                → grille complète des projets + filtres par classification
