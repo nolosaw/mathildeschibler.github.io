@@ -89,46 +89,81 @@ header nav {
 }
 
 /* ==========================================================
-   CARROUSEL (accueil)
+   ACCUEIL — carrousel plein écran (9 projets, images verticales)
    ========================================================== */
-.carousel {
-  overflow: hidden;
-  padding: 4rem 0;
-}
-
-.carousel-track {
+body.home {
   display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0 20%;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.carousel-track::-webkit-scrollbar { display: none; }
-
-.carousel-slide {
-  flex: 0 0 60%;
-  scroll-snap-align: center;
+body.home main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-image {
-  aspect-ratio: 16 / 10;
-  background-color: #000000;
+.home-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 80vh;
   overflow: hidden;
 }
-.carousel-image img { width: 100%; height: 100%; object-fit: cover; }
 
-.carousel-caption {
-  margin-top: 1rem;
-  font-size: 0.95rem;
+.home-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.home-slide.active {
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+.home-slide.leaving {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+.home-slide.no-transition {
+  transition: none;
+}
+.home-slide img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.home-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  text-transform: lowercase;
+  flex: none;
 }
 
-@media (max-width: 768px) {
-  .carousel-slide { flex-basis: 80%; }
-  .carousel-track { padding: 0 10%; }
+@media (prefers-reduced-motion: reduce) {
+  .home-slide {
+    transition: none;
+    transform: none !important;
+  }
 }
 
+@media (max-width: 900px) {
+  .home-carousel {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+  }
+}
 /* ==========================================================
    FILTRES (page projets)
    ========================================================== */
@@ -216,9 +251,11 @@ header nav {
   transform: scale(1.05);
 }
 .project-card-caption {
-  margin-top: 0.2rem;
+  margin-top: 1rem;
   font-size: 1rem;
+  font-weight: 600;
   text-transform:uppercase;
+      border-top: 1px solid #000000;
       border-bottom: 1px solid #000000;
 
 }

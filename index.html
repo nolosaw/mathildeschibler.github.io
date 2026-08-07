@@ -6,6 +6,7 @@
   <title>mathilde schibler — design en interaction</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
+<body class="home">
 
 <header>
   <div class="brand">
@@ -22,22 +23,16 @@
   </nav>
 </header>
 
-<main class="project-page">
-    <div class="about-columns">
-      <div class="about-fr">
-            <p>voici une page blanche dans ce monde de brutes.</p>
-    <a href="/projects/" class="home-placeholder">
-  
-      <p>et sinon, les projets, c'est par là.</p>
-    </a>
-      </div>
+  <main>
+    <div class="home-carousel" id="home-carousel">
+      <!-- généré en JS depuis data/projects.json (projets "featured", triés par homeOrder) -->
     </div>
   </main>
 
   <script src="https://unpkg.com/lenis/dist/lenis.min.js"></script>
   <script src="/js/lenis-init.js"></script>
   <script src="/js/custom-cursor.js"></script>
-  <!-- <script src="/js/carousel.js"></script> -->
+  <script src="/js/carousel.js"></script>
   <script src="/js/nav-toggle.js"></script>
 </body>
 </html>

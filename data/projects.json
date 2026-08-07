@@ -1,17 +1,24 @@
 [
+
+
   {
     "slug": "un-carton-de-plus",
-    "title": "Un carton de plus",
+    "title": "un carton de plus",
     "cover": "/assets/covers/un-carton-de-plus.webp",
     "classification": [
       "mediation-co-design",
       "installation-interactive",
       "conception-objet-jeux"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 2,
+  "homeImage": "/assets/home/02.webp",
+  "homeTitle": "un carton de plus",
+  "homeCategory": "objet et co-design"
   },
   {
     "slug": "lyoxa",
-    "title": "Lyoxa",
+    "title": "association lyoxa",
     "cover": "/assets/covers/lyoxa.webp",
     "classification": [
       "identite-positionnement",
@@ -19,14 +26,20 @@
       "mediation-co-design"
     ]
   },
+    
   {
     "slug": "degrade",
-    "title": "DeGrade",
+    "title": "degrade",
     "cover": "/assets/covers/degrade.webp",
     "classification": [
       "installation-interactive",
       "conception-objet-jeux"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 8,
+  "homeImage": "/assets/home/08.webp",
+  "homeTitle": "degrade",
+  "homeCategory": "installation immersive"
   },
   {
     "slug": "delusional-souvenirs",
@@ -62,7 +75,8 @@
     "classification": [
       "installation-interactive",
       "conception-objet-jeux"
-    ]
+    ] 
+
   },
   {
     "slug": "focus",
@@ -82,7 +96,12 @@
       "mediation-co-design",
       "installation-interactive",
       "conception-objet-jeux"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 6,
+  "homeImage": "/assets/home/06.webp",
+  "homeTitle": "vous êtes ici.",
+  "homeCategory": "jeu de société"
   },
   {
     "slug": "act",
@@ -92,7 +111,12 @@
       "identite-positionnement",
       "signaletique",
       "mediation-co-design"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 9,
+  "homeImage": "/assets/home/09.webp",
+  "homeTitle": "act!",
+  "homeCategory": "identité et co-design"
   },
   {
     "slug": "case-27",
@@ -109,7 +133,12 @@
     "cover": "/assets/covers/freeride-club-verbier.webp",
     "classification": [
       "identite-positionnement"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 7,
+  "homeImage": "/assets/home/07.webp",
+  "homeTitle": "freeride club verbier",
+  "homeCategory": "identité graphique"
   },
   {
     "slug": "geneva-pride",
@@ -119,7 +148,12 @@
       "identite-positionnement",
       "motion-design",
       "signaletique"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 1,
+  "homeImage": "/assets/home/01.webp",
+  "homeTitle": "geneva pride",
+  "homeCategory": "identité graphique"
   },
   {
     "slug": "gerance-centrale",
@@ -127,7 +161,13 @@
     "cover": "/assets/covers/gerance-centrale.webp",
     "classification": [
       "identite-positionnement"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 5,
+  "homeImage": "/assets/home/05.webp",
+  "homeTitle": "gérance centrale",
+  "homeCategory": "identité graphique"
+  
   },
   {
     "slug": "orchestre-college",
@@ -136,7 +176,7 @@
     "classification": [
       "identite-positionnement",
       "motion-design"
-    ]
+    ],      "featured": false
   },
   {
     "slug": "quai-vernets",
@@ -146,7 +186,12 @@
       "identite-positionnement",
       "signaletique",
       "conception-objet-jeux"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 4,
+  "homeImage": "/assets/home/04.webp",
+  "homeTitle": "quai vernets",
+  "homeCategory": "signalétique"
   },
   {
     "slug": "vogue-puplinge",
@@ -156,6 +201,11 @@
       "identite-positionnement",
       "motion-design",
       "signaletique"
-    ]
+    ],
+      "featured": true,
+  "homeOrder": 3,
+  "homeImage": "/assets/home/03.webp",
+  "homeTitle": "vogue puplinge",
+  "homeCategory": "identité et communication"
   }
 ]
