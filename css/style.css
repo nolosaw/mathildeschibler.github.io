@@ -542,7 +542,7 @@ header nav { order: 2; }
 @media (max-width: 600px) {
   .project-sidebar,
   .project-media {
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
 
   .scroll-top {
