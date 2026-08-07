@@ -1,8 +1,8 @@
 [
-  { "slug": "identite-positionnement", "label": "Identité & positionnement" },
-  { "slug": "motion-design", "label": "Motion design" },
-  { "slug": "signaletique", "label": "Signalétique" },
-  { "slug": "mediation-co-design", "label": "Médiation & co-design" },
-  { "slug": "installation-interactive", "label": "Installation interactive" },
-  { "slug": "conception-objet-jeux", "label": "Conception d'objet & jeux" }
+  { "slug": "identite-positionnement", "label": "identité & positionnement" },
+  { "slug": "motion-design", "label": "motion design" },
+  { "slug": "signaletique", "label": "signalétique" },
+  { "slug": "mediation-co-design", "label": "médiation & co-design" },
+  { "slug": "installation-interactive", "label": "installation interactive" },
+  { "slug": "conception-objet-jeux", "label": "conception d'objet & jeux" }
 ]
