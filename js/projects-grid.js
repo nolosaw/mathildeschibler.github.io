@@ -49,6 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Impossible de charger les données :', err));
 
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  grid.classList.add('cursor-follow');
+  grid.addEventListener('mousemove', (e) => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+    const caption = card.querySelector('.project-card-caption');
+    if (!caption) return;
+    caption.style.transform = `translate(${e.clientX + 16}px, ${e.clientY +10}px)`;
+  });
+}
+
   function renderFilters(classification) {
     classification.forEach(tag => {
       const chip = document.createElement('button');
