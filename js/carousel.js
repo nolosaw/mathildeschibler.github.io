@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carousel-track');
   if (!track) return;
 
-  fetch('data/projects.json')
+  fetch('/data/projects.json')
     .then(response => response.json())
     .then(projects => {
       const featured = projects.filter(p => p.featured);
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function slideMarkup(project) {
     return `
-      <a href="projects/${project.slug}.html" class="carousel-slide">
+      <a href="/projects/${project.slug}/" class="carousel-slide">
         <div class="carousel-image">
           <img src="${project.cover}" alt="${project.title}" loading="lazy">
         </div>

@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   Promise.all([
-    fetch('data/classification.json').then(r => r.json()),
-    fetch('data/projects.json').then(r => r.json())
+    fetch('/data/classification.json').then(r => r.json()),
+    fetch('/data/projects.json').then(r => r.json())
   ])
     .then(([classification, projects]) => {
       allProjects = projects;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.innerHTML = '';
     projects.forEach(project => {
       const card = document.createElement('a');
-      card.href = `projects/${project.slug}.html`;
+      card.href = `/projects/${project.slug}/`;
       card.className = 'project-card';
       card.dataset.classification = project.classification.join(' ');
 
